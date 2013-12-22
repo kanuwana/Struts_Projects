@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+    "http://struts.apache.org/dtds/struts-2.3.dtd">
+ 
+<struts>
+	<package name="default" namespace="/" extends="struts-default">
+	
+		<default-action-ref name="index" />
+		
+		<action name="index">
+			<result type="redirectAction">
+                <param name="actionName">hello</param>
+                <param name="namespace">/hello</param>
+            </result>
+		</action>
+		
+	</package>
+	
+	<package name="hello" namespace="/hello" extends="struts-default">
+		
+		<action name="hello" class="com.kanuwana.hellostruts.Hello">
+			<result name="success">/views/success.jsp</result>
+			<result name="error">/views/error.jsp</result>
+		</action>
+		
+	</package>
+	
+</struts>
